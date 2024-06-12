@@ -1,0 +1,17 @@
+.div1{
+    width: 600px;
+    height: 200px;
+    position: sticky;
+    top:0;
+    bottom:0;
+    background-color: greenyellow;
+}
+
+.div2{
+    width: 60px;
+    height: 60px;
+    top:0;
+    right:0;
+    position: absolute;
+    background-color: rgb(12, 220, 235);
+}

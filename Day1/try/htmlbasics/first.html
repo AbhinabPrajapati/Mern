@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#Lorem{
+    color:green;
+    font-size: 20px;
+    font-weight: bold;
+    border:3px solid black;
+    border-radius:10px;
+}
+
+.secondp{
+    color: olive;
+    text-align:center;
+}
+table,
+td,
+th{
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+    </style>
+    <link rel="stylesheet" href="./first.css">
+</head>
+<body>
+    <h1 style="color:red">Hello World</h1>
+    <p id="Lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Aliquid voluptates quibusdam enim cupiditate,
+        dolorum nobis vitae aspernatur tempore, nemo aliquam commodi facere eum veniam ipsam libero praesentium
+        velit, sequi eligendi!
+    </p>
+    <hr>
+    <p class="secondp"><b>Lorem ipsum</b>, dolor <strong>sit amet consectetur</strong> adipisicing elit. <i>Aperiam asperiores</i> consequatur nobis. <em>Tempora, sunt aliquid</em> quas, autem labore <small>accusamus quos </small>rem explicabo natus <mark>consequuntur delectus</mark> error id rerum nesciunt quasi?
+    Sit autem <del>inventore</del> commodi provident voluptatibus! <ins>Perspiciatis</ins>, v<sup>2</sup>oluptatem s<sub>5</sub>ed? Tempora deleniti fugiat voluptas ducimus commodi, necessitatibus itaque iure expedita earum voluptate nemo corporis! Illo expedita dolorem cum ipsum, autem voluptas.
+    Libero labore recusandae quam illum facere molestias ullam ipsum! Fugit suscipit neque quidem voluptatibus, perferendis modi id veritatis cum sequi magni harum iste ipsa excepturi molestiae nihil reiciendis mollitia at?
+    Ad porro aspernatur dignissimos molestiae eum cupiditate culpa aliquam magnam asperiores minus possimus, nemo fugiat amet a fugit sequi tempora mollitia ut, id ea quasi excepturi ab. Maxime, ad deserunt!
+    Sint, eaque ad impedit veritatis odit voluptatum natus quo magni ipsum illum maxime accusantium laborum. Quibusdam maiores quidem aliquid consequuntur aliquam modi natus veritatis officia voluptatibus omnis dolor, iure sunt.
+    </p>
+    <h1 id="heading">Tables</h1>
+    <ul style="list-style-type:circle">
+        <li>Cricket</li>
+        <li>Football</li>
+        <li>Basketball</li>
+        <li>Rugby</li>
+    </ul>
+    <ol type="1" start="4">
+        <li>Travis Scott</li>
+        <li>Kendric Lamar</li>
+        <li>21 Savage</li>
+        <li>Metro Boomin</li>
+    </ol>
+
+    <table border="1">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Pradip</td>
+            <td>Kandel</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>Giriraj</td>
+            <td>Rawat</td>
+            <td>23</td>
+        </tr>
+    </table>
+    <form enctype="multipart/form-data">
+        <label for="fname" >Full name:</label><br />
+        <input type="text" id="fname" name="fname" placeholder="enter full name" maxlength="5" required><br />
+        <label for="lname">Last name</label><br />
+        <input type="text" id="lname" name="lname"><br />
+        <textarea rows="5" cols="50"></textarea><br />
+        <select>
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+        </select><br />
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label><br />
+        <input type="radio" id="female" name="gender" value="male" />
+        <label for="female">Female</label><br />
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label><br />
+       
+        <input type="checkbox" id="male" name="gender" value="male" />
+        <label for="male">Male</label><br />
+        <input type="checkbox" id="female" name="gender" value="male" />
+        <label for="female">Female</label><br />
+        <input type="checkbox" id="other" name="gender" value="other" />
+        <label for="other">Other</label><br />
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
