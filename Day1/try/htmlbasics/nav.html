@@ -3,18 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Navigation Bar</title>
     <style>
-        .main-nav{
-            max-height: 50px;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 5px;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 600px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: skyblue;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                padding: 0;
+                margin: 0;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                text-align: center;
+            }
+
+            .navbar ul li {
+                margin: 0;
+                padding: 5px;
+                border-bottom: 1px dotted #444;
+            }
+
+            .navbar ul li:last-child {
+                border-bottom: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+        }
+
+        .navbar-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
         }
     </style>
 </head>
 <body>
-    <div class="main-nav">
-        <div><img src="./786NzPhpXo6G8hkutJkHTM-1200-80.jpg" alt="logo" class="logo" width="50px"></img></div>
-        <div></div>
+    <div class="navbar">
+        <a href="#" class="logo">Logo</a>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Cart</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="burger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    
+
+    <script>
+        function toggleMenu() {
+            const ul = document.querySelector('.navbar ul');
+            ul.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

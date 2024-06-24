@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book Heaven</title>
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <h1>Welcome to The Book Heaven</h1>
+    <input type="text" id="search-bar" placeholder="Search for books...">
+    <ul id="book-list"></ul>
+    <input type="text" id="new-book-title" placeholder="New book title">
+    <button id="add-book">Add Book</button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookList = document.getElementById('book-list');
+            const searchBar = document.getElementById('search-bar');
+            const addBookButton = document.getElementById('add-book');
+            const newBookTitle = document.getElementById('new-book-title');
+
+            let books = [
+                { title: 'The Art of Racing in the Rain', favorite: false },
+                { title: 'A Different Kind of Fast', favorite: false },
+                { title: 'Champions of the Track', favorite: false },
+                { title: 'Speed Kings', favorite: false }
+            ];
+
+            function renderBooks(filter = '') {
+                bookList.innerHTML = '';
+                books.filter(book => book.title.toLowerCase().includes(filter.toLowerCase()))
+                     .forEach(book => {
+                    const li = document.createElement('li');
+                    li.textContent = book.title;
+                    li.classList.toggle('favorite', book.favorite);
+                    const favoriteButton = document.createElement('button');
+                    favoriteButton.textContent = book.favorite ? 'Unfavorite' : 'Favorite';
+                    favoriteButton.classList.add('favorite-btn');
+                    favoriteButton.addEventListener('click', () => {
+                        book.favorite = !book.favorite;
+                        renderBooks(searchBar.value);
+                    });
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    removeButton.classList.add('remove-btn');
+                    removeButton.addEventListener('click', () => {
+                        books = books.filter(b => b !== book);
+                        renderBooks(searchBar.value);
+                    });
+                    li.appendChild(favoriteButton);
+                    li.appendChild(removeButton);
+                    bookList.appendChild(li);
+                });
+            }
+
+            addBookButton.addEventListener('click', () => {
+                const title = newBookTitle.value.trim();
+                if (title) {
+                    books.push({ title, favorite: false });
+                    newBookTitle.value = '';
+                    renderBooks(searchBar.value);
+                }
+            });
+
+            searchBar.addEventListener('input', () => {
+                renderBooks(searchBar.value);
+            });
+
+            renderBooks();
+        });
+    </script>
+</body>
+</html>

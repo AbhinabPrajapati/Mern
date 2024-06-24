@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasker - My Task</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Task</h1>
+            <button id="addTaskButton" class="add-task-btn">Add Task</button>
+        </header>
+        <main>
+            <section class="tasks-section">
+                <h2>Today</h2>
+                <ul id="todayTasks" class="task-list"></ul>
+            </section>
+            <section class="tasks-section">
+                <h2>Tomorrow</h2>
+                <ul id="tomorrowTasks" class="task-list"></ul>
+            </section>
+            <section class="tasks-section">
+                <h2>Upcoming</h2>
+                <ul id="upcomingTasks" class="task-list"></ul>
+            </section>
+        </main>
+    </div>
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Task</h2>
+            <input type="text" id="taskTitle" placeholder="Task Title">
+            <select id="taskDate">
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="upcoming">Upcoming</option>
+            </select>
+            <button id="saveTaskButton" class="save-task-btn">Save Task</button>
+        </div>
+    </div>
+    <script src="to-do.js"></script>
+</body>
+</html>
